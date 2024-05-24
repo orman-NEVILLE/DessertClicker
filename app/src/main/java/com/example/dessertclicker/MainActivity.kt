@@ -69,12 +69,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.content.ContextCompat
 import androidx.media3.common.util.Log
+import androidx.media3.common.util.UnstableApi
 import com.example.dessertclicker.data.Datasource
 import com.example.dessertclicker.model.Dessert
 import com.example.dessertclicker.ui.theme.DessertClickerTheme
 
 private const val TAG = "MainActivity"
 class MainActivity : ComponentActivity() {
+    @androidx.annotation.OptIn(UnstableApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
@@ -92,34 +94,41 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-    ajouter la fonction suivante
+
+    @androidx.annotation.OptIn(UnstableApi::class)
     override fun onStart() {
         super.onStart()
         Log.d(TAG, "onStart Called")
-        override fun onResume() {
-            super.onResume()
-            Log.d(TAG, "onResume Called")
-        }
 
-        override fun onRestart() {
-            super.onRestart()
-            Log.d(TAG, "onRestart Called")
-        }
+    }
+    @androidx.annotation.OptIn(UnstableApi::class)
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume Called")
+    }
 
-        override fun onPause() {
-            super.onPause()
-            Log.d(TAG, "onPause Called")
-        }
+    @androidx.annotation.OptIn(UnstableApi::class)
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart Called")
+    }
 
-        override fun onStop() {
-            super.onStop()
-            Log.d(TAG, "onStop Called")
-        }
+    @androidx.annotation.OptIn(UnstableApi::class)
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause Called")
+    }
 
-        override fun onDestroy() {
-            super.onDestroy()
-            Log.d(TAG, "onDestroy Called")
-        }
+    @androidx.annotation.OptIn(UnstableApi::class)
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop Called")
+    }
+
+    @androidx.annotation.OptIn(UnstableApi::class)
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy Called")
     }
 }
 
